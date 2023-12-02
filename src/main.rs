@@ -1,4 +1,5 @@
 mod a_welcome;
+mod b_to;
 
 fn main() {
     match crate::a_welcome::solution() {
@@ -7,6 +8,14 @@ fn main() {
         }
         Err(e) => {
             println!("Solution 1 error: {:#}", e)
+        }
+    };
+    match crate::b_to::solution() {
+        Ok(i) => {
+            println!("Solution 2: {}", i)
+        }
+        Err(e) => {
+            println!("Solution 2 error: {:#}", e)
         }
     };
 }
