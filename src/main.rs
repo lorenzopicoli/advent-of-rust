@@ -1,6 +1,7 @@
 mod a_welcome;
 mod b_to;
 mod c_advent;
+mod d_of;
 
 fn main() {
     match crate::a_welcome::solution() {
@@ -25,6 +26,14 @@ fn main() {
         }
         Err(e) => {
             println!("Solution 3 error: {:#}", e)
+        }
+    };
+    match crate::d_of::solution() {
+        Ok(i) => {
+            println!("Solution 4: {}", i)
+        }
+        Err(e) => {
+            println!("Solution 4 error: {:#}", e)
         }
     };
 }
