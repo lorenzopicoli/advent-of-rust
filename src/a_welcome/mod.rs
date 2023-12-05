@@ -85,16 +85,15 @@ pub fn part2(reader: BufReader<File>) -> io::Result<u32> {
     Ok(sum)
 }
 
-pub fn solution() -> io::Result<u32> {
+pub fn solution() {
     let path = Path::new("src/a_welcome/input.txt");
     // let path = Path::new("src/a_welcome/example.txt");
     // let path = Path::new("src/a_welcome/example2.txt");
-    let mut file = File::open(&path)?;
+    let mut file = File::open(path).unwrap();
     let part1 = part1(io::BufReader::new(file));
-    file = File::open(&path)?;
+    file = File::open(path).unwrap();
     let part2 = part2(io::BufReader::new(file));
 
-    println!("Problem 1, part 1 {:#?}", part1);
-
-    part2
+    println!("Day 1, part 1 {}", part1.unwrap());
+    println!("Day 1, part 2 {}", part2.unwrap());
 }

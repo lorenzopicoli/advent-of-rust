@@ -24,7 +24,7 @@ fn count_colors(colors: Vec<String>) -> (i32, i32, i32) {
     let mut red = 0;
     let mut green = 0;
     for color in colors {
-        let parts = split_str(&color.trim(), " ");
+        let parts = split_str(color.trim(), " ");
         let name = parts[1].clone();
         let count = parts[0].clone();
         match name.as_str() {
@@ -39,12 +39,12 @@ fn count_colors(colors: Vec<String>) -> (i32, i32, i32) {
 }
 
 fn parse_line(line: &str) -> ParsedLine {
-    let split = split_str(&line, ":");
+    let split = split_str(line, ":");
     let game = split_str(&split[0], " ");
     let game_id = game[1].clone().parse::<i32>().unwrap();
     let subsets = split_str(&split[1], ";");
 
-    return ParsedLine { game_id, subsets };
+    ParsedLine { game_id, subsets }
 }
 
 pub fn part1(reader: BufReader<File>) -> io::Result<i32> {
@@ -98,15 +98,15 @@ pub fn part2(reader: BufReader<File>) -> io::Result<i32> {
     Ok(total_power)
 }
 
-pub fn solution() -> io::Result<i32> {
+pub fn solution() {
     let path = Path::new("src/b_to/input.txt");
     // let path = Path::new("src/b_to/example.txt");
-    let mut file = File::open(&path)?;
+
+    let mut file = File::open(path).unwrap();
     let part1 = part1(io::BufReader::new(file));
-    file = File::open(&path)?;
+    file = File::open(path).unwrap();
     let part2 = part2(io::BufReader::new(file));
 
-    println!("Problem 2, part 1 {:#?}", part1);
-
-    part2
+    println!("Day 2, part 1 {}", part1.unwrap());
+    println!("Day 2, part 2 {}", part2.unwrap());
 }
