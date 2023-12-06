@@ -3,6 +3,7 @@ mod b_to;
 mod c_advent;
 mod d_of;
 mod e_rust;
+mod f_;
 
 fn main() {
     crate::a_welcome::solution();
@@ -14,5 +15,7 @@ fn main() {
     crate::d_of::solution();
     println!("----------");
     crate::e_rust::solution();
+    println!("----------");
+    crate::f_::solution();
     println!("----------");
 }

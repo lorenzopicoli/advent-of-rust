@@ -14,15 +14,14 @@ pub fn part2(reader: BufReader<File>) -> io::Result<i32> {
     Ok(1)
 }
 
-pub fn solution() -> io::Result<i32> {
+pub fn solution() {
     let path = Path::new("src/d_of/input.txt");
     // let path = Path::new("src/d_of/example.txt");
-    let mut file = File::open(&path)?;
+    let mut file = File::open(path).unwrap();
     let part1 = part1(io::BufReader::new(file));
-    file = File::open(&path)?;
+    file = File::open(path).unwrap();
     let part2 = part2(io::BufReader::new(file));
 
-    println!("Problem 4, part 1 {:#?}", part1);
-
-    part2
+    println!("Day X, part 1 {}", part1.unwrap());
+    println!("Day X, part 2 {}", part2.unwrap());
 }
