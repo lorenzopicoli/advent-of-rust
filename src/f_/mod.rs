@@ -76,7 +76,6 @@ pub fn part2(reader: BufReader<File>) -> io::Result<u64> {
 
         let value = line.replace(' ', "");
 
-        println!("{} {}", line_idx, value);
         match line_idx {
             0 => {
                 time = value.parse::<u64>().unwrap();
