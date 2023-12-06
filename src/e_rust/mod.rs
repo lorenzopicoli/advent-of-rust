@@ -146,7 +146,7 @@ pub fn part2(reader: BufReader<File>) -> io::Result<u64> {
                 let start = split[step.0 * 2].parse::<u64>().unwrap();
                 let length = split[step.0 * 2 + 1].parse::<u64>().unwrap();
                 seeds.push(TransformationRange {
-                    range: start..start + length + 1,
+                    range: start..start + length,
                     t_id: -1,
                 });
             }
@@ -166,8 +166,8 @@ pub fn part2(reader: BufReader<File>) -> io::Result<u64> {
         let source = split[1].parse::<u64>().unwrap();
         let length = split[2].parse::<u64>().unwrap();
 
-        let source_range = source..(source + length + 1);
-        let dest_range = dest..(dest + length + 1);
+        let source_range = source..(source + length);
+        let dest_range = dest..(dest + length);
 
         let mut new_seeds: Vec<TransformationRange> = Vec::new();
         for seed in &seeds {
