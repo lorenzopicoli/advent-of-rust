@@ -5,6 +5,7 @@ mod d_of;
 mod e_rust;
 mod f_;
 mod g_I;
+mod h_;
 
 fn main() {
     crate::a_welcome::solution();
@@ -20,5 +21,7 @@ fn main() {
     crate::f_::solution();
     println!("----------");
     crate::g_I::solution();
+    println!("----------");
+    crate::h_::solution();
     println!("----------");
 }
