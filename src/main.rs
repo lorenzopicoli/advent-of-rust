@@ -7,6 +7,7 @@ mod f_;
 mod g_I;
 mod h_;
 mod i_wish;
+mod j_you;
 
 use std::time::Instant;
 
@@ -53,6 +54,10 @@ fn main() {
     println!("----------");
     let now = Instant::now();
     crate::i_wish::solution();
+    let elapsed = now.elapsed();
+    println!("Time elapsed: {:.2?}", elapsed);
+    println!("----------");
+    crate::j_you::solution();
     let elapsed = now.elapsed();
     println!("Time elapsed: {:.2?}", elapsed);
     println!("----------");
