@@ -14,7 +14,7 @@ fn get_world(reader: BufReader<File>) -> (Vec<Vec<char>>, Vec<(usize, usize)>) {
         for ch in line.chars() {
             let length = world.len();
             world[length - 1].push(ch);
-            if (ch == '#') {
+            if ch == '#' {
                 galaxy_positions.push((length - 1, world[length - 1].len() - 1));
             }
         }
